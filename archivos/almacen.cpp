@@ -1,6 +1,6 @@
-#include "Almacen.h"
+#include "almacen.h"
 
-almacen::almacen(longitud h, longitud w, cantidad r, cantidad c){
+Almacen::Almacen(longitud h, longitud w, cantidad r, cantidad c){
 	height = h;
 	width = w;
 	rows = r;
@@ -16,10 +16,10 @@ almacen::almacen(longitud h, longitud w, cantidad r, cantidad c){
 	}
 }
 
-void almacen::add_robot(robot r) {
+void Almacen::add_robot(Robot r) {
 	robots.push_back(r);
 }
 
-void almacen::add_slot(slot s) {
+void Almacen::add_slot(Slot s) {
 	slots.push_back(s);
 }
