@@ -1,7 +1,7 @@
 #include "tipos.h"
 #include <vector>
 
-class casilla {
+class Casilla {
 private:
 	longitud height;
 	longitud width;
@@ -9,7 +9,7 @@ private:
 	estado lleno;
 	
 public:
-	casilla(longitud h, longitud w, coor x, coor y);
+	Casilla(longitud h, longitud w, coor x, coor y);
 	void set_estado(estado valor);
 	longitud get_height();
 	longitud get_width();
