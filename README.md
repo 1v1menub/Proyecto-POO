@@ -1,5 +1,4 @@
 # Proyecto POO
-#Curso: Programación Orientada a Objetos
 
 **Integrantes**
 
