@@ -8,4 +8,6 @@
 
 **Spreadsheet**
 
-link: https://docs.google.com/spreadsheets/d/164HVXRRQ2w5CU50sN__SCRAsZb_Hrf_eopw-8LSNsDA/edit#gid=0
+link: https://docs.google.com/spreadsheets/d/164HVXRRQ2w5CU50sN__SCRAsZb_Hrf_eopw-8LSNsDA/edit#gid=0  
+
+Nuestro plan es tratar de graficarlo utilizando SFML
