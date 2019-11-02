@@ -4,7 +4,7 @@
 #include "slot.h"
 #include <vector>
 
-class almacen {
+class Almacen {
 private:
 	longitud height;
 	longitud width;
