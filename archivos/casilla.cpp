@@ -11,7 +11,7 @@ void casilla::set_estado(estado valor) {
 	//False si no esta lleno True si si lo esta
 	lleno = valor;
 }
-bool casilla::get_estado() {
+estado casilla::get_estado() {
 	return lleno;
 }
 
