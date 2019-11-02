@@ -39,7 +39,7 @@ void Robot::depositar() {
 
 void Robot::cargar(Producto producto) {
   estado_robot = true;
-  contenido = get_nombre;
+  contenido = get_nombre();
 }
 
 void Robot::esperar() {
