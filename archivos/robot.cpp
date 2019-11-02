@@ -55,6 +55,6 @@ numero Robot::get_numero_robot() {
   return numero_robot;
 }
 
-vector<coor> get_posicion_robot() {
+vector<coor> Robot::get_posicion_robot() {
   return posicion_robot;
 }
