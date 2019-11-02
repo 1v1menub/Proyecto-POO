@@ -23,4 +23,5 @@ class Robot {
     void esperar();
     estado get_estado_robot();
     numero get_numero_robot();
+    vector<coor> get_posicion_robot();
 }
