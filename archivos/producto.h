@@ -6,17 +6,17 @@
 #define PRODUCTO_PRODUCTO_H
 
 #include <iostream>
+#include "tipos.h"
 using namespace std;
-typedef string letra;
 
 class Producto {
 private: //atributos
-    letra nombre;
+    nombre n;
 
 public://metodos
-    Producto(letra nom);
+    Producto(nombre nom);
     //metodo de acceso
-    letra get_nombre();
+    nombre get_nombre();
 };
 
 
