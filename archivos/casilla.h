@@ -13,6 +13,7 @@ public:
 	void set_estado(estado valor);
 	longitud get_height();
 	longitud get_width();
+	std::vector get_pos();
 	estado get_estado();
 
 };
