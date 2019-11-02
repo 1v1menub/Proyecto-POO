@@ -6,4 +6,4 @@ Proyecto Poo
     
     Luis Berrospi (lender512)
     
-    Mauricio Farfan (
+    Mauricio Farfan (mau23102001)
