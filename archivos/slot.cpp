@@ -37,3 +37,7 @@ estado Slot::get_estado_slot() {
 numero Slot::get_numero_slot() {
   return numero_slot;
 }
+
+vector<coor> Slot::get_posicion_slot() {
+  return posicion_slot;
+}
