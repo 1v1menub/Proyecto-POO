@@ -11,7 +11,7 @@ Slot::Slot(numero _numero_slot, vector<coor> _posicion_slot, cantidad _capacidad
 
 void Slot::agregar_producto(Producto producto) {
   if(estado_slot == false) {
-    productos.push_back(get_nombre);
+    productos.push_back(get_nombre());
     if(productos.size() = capacidad) {
       estado_slot = true;
     }
