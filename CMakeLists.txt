@@ -4,6 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Agregue un origen al ejecutable de este proyecto.
-add_executable (CMakeProject1 "CMakeProject1.cpp" "CMakeProject1.h" "Almacen.cpp" "tipos.h" "casilla.cpp" "robot.cpp" "slot.cpp")
+add_executable (CMakeProject1 "Main.cpp" "Almacen.cpp" "tipos.h" "casilla.cpp" "robot.cpp" "slot.cpp")
 
 # TODO: Agregue pruebas y destinos de instalación si es necesario.
