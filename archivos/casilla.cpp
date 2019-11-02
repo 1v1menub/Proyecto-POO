@@ -22,3 +22,8 @@ longitud Casilla::get_width() {
 longitud Casilla::get_height() {
 	return height;
 }
+
+std::vector Casilla::get_pos() {
+	return posicion;
+}
+
