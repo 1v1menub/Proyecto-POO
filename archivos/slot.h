@@ -18,4 +18,5 @@ class Slot {
     void quitar_producto(nombre nombre_producto);
     estado get_estado_slot();
     numero get_numero_slot();
+    vector<coor> get_posicion_slot();
 }
