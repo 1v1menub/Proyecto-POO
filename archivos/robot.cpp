@@ -47,10 +47,10 @@ void Robot::esperar() {
   posicion_robot[1] = posicion_robot[1]; 
 } // ya se que esto no hace nada pero como tengo imaginado la cosa se le otorga 1 movimiento a cada robot y luego se ejecutan todos y luego otro y asi, si la instruccion detecta una colision entonces le dice al robot que ejecute la funcion esperar. 
 
-bool Robot::get_estado_robot() {
+estado Robot::get_estado_robot() {
   return estado_robot;
 }
 
-int Robot::get_numero_robot() {
+numero Robot::get_numero_robot() {
   return numero_robot;
 }
