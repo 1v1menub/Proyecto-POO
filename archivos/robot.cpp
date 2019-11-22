@@ -1,11 +1,11 @@
 #include "robot.h"
 
-Robot::Robot(numero _numero_robot, estado _estado_robot, vector<coor> _posicion_home, vector<coor> _posicion_robot, nombre _contenido) {
+Robot::Robot(numero _numero_robot, estado _estado_robot, vector<coor> _posicion_home, vector<coor> _posicion_robot, Producto* _contenido) {
   numero_robot = _numero_robot;
   estado_robot = _estado_robot;
   posicion_home = _posicion_home;
   posicion_robot = _posicion_robot;
-  contenido = _contenido
+  contenido = _contenido;
 }
 
 void Robot::avanzar_x(vector<coor> destino) {
@@ -34,18 +34,22 @@ void Robot::retroceder_y(vector<coor> destino) {
 
 void Robot::depositar() {
   estado_robot = false;
-  contenido = "Vacio";
+  contenido = nullptr;
 }
 
-void Robot::cargar(Producto producto) {
+void Robot::cargar(Producto* producto) {
   estado_robot = true;
-  contenido = get_nombre();
+  contenido = producto;
 }
 
 void Robot::esperar() {
   posicion_robot[0] = posicion_robot[0];
   posicion_robot[1] = posicion_robot[1]; 
 } // ya se que esto no hace nada pero como tengo imaginado la cosa se le otorga 1 movimiento a cada robot y luego se ejecutan todos y luego otro y asi, si la instruccion detecta una colision entonces le dice al robot que ejecute la funcion esperar. 
+
+Producto* Robot::get_producto() {
+  return contenido;
+}
 
 estado Robot::get_estado_robot() {
   return estado_robot;
