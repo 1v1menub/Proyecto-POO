@@ -1,7 +1,7 @@
 #include "slot.h"
 #include <iostream>
 
-Slot::Slot(numero _numero_slot, vector<coor> _posicion_slot, cantidad _capacidad, estado _estado_slot, vecotr<Producto> _productos) {
+Slot::Slot(numero _numero_slot, vector<coor> _posicion_slot, cantidad _capacidad, estado _estado_slot, vector<Producto*> _productos) {
   numero_slot = _numero_slot;
   posicion_slot = _posicion_slot;
   capacidad = _capacidad;
@@ -9,9 +9,9 @@ Slot::Slot(numero _numero_slot, vector<coor> _posicion_slot, cantidad _capacidad
   productos = _productos;
 }
 
-void Slot::agregar_producto(Producto producto) {
+void Slot::agregar_producto(Producto* producto) {
   if(estado_slot == false) {
-    productos.push_back(get_nombre());
+    productos.push_back(producto);
     if(productos.size() = capacidad) {
       estado_slot = true;
     }
@@ -21,13 +21,21 @@ void Slot::agregar_producto(Producto producto) {
   }
 }
 
-void Slot::quitar_producto(nombre nombre_producto) {
+void Slot::quitar_producto(Producto* producto) {
   for(int i = 0; i < productos.size; i++) {
-    if(productos[i] == nombre_producto) {
+    if(productos[i] == producto) {
       productos.erase(productos.begin() + i);
       break
     }
   }
+}
+
+vector<Producto*> Slot::get_productos() {
+  return productos;
+}
+
+cantidad Slot::get_capacidad() {
+  return capacidad;
 }
 
 estado Slot::get_estado_slot() {
