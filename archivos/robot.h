@@ -1,3 +1,6 @@
+#ifdef ROBOT_H
+#define ROBOT_H
+
 #include <vector>
 #include <string>
 #include "tipos.h"
@@ -11,17 +14,20 @@ class Robot {
     estado estado_robot;
     vector<coor> posicion_home;
     vector<coor> posicion_robot;
-    nombre contenido;
+    Producto* contenido;
   public:
-    Robot(numero numero_robot, estado estado_robot, vector<coor> posicion_home, vector<coor> posicion_robot, nombre contenido);
+    Robot(numero numero_robot, estado estado_robot, vector<coor> posicion_home, vector<coor> posicion_robot, Producto* contenido);
     void avanzar_x(vector<coor> destino);
     void avanzar_y(vector<coor> destino);
     void retroceder_x(vector<coor> destino);
     void retroceder_y(vector<coor> destino);
     void depositar();
-    void cargar(Producto producto);
+    void cargar(Producto* producto);
     void esperar();
+    Producto* get_producto();
     estado get_estado_robot();
     numero get_numero_robot();
     vector<coor> get_posicion_robot();
-}
+};
+
+#endif
