@@ -1,35 +1,19 @@
 #include "robot.h"
 
-Robot::Robot(numero _numero_robot, estado _estado_robot, vector<coor> _posicion_home, vector<coor> _posicion_robot, Producto* _contenido) {
+Robot::Robot(numero _numero_robot, estado _estado_robot, coor x, coor y, vector<coor> _posicion_robot, Producto* _contenido) {
   numero_robot = _numero_robot;
   estado_robot = _estado_robot;
   posicion_home = _posicion_home;
-  posicion_robot = _posicion_robot;
+  posicion_robot = {x, y};
   contenido = _contenido;
 }
 
-void Robot::avanzar_x(vector<coor> destino) {
-  for(int i = posicion_robot[0]; i < destino[0]; i++) {
-    posicion_robot[0]++;
-  }
+void Robot::set_Posicion_X(coor x) {
+	posicion_robot[0] = x;
 }
 
-void Robot::retroceder_x(vector<coor> destino) {
-  for(int i = posicion_robot[0]; i > destino[0]; i--) {
-    posicion_robot[0]--;
-  }
-}
-
-void Robot::avanzar_y(vector<coor> destino) {
-  for(int i = posicion_robot[1]; i < destino[1]; i++) {
-    posicion_robot[1]++;
-  }
-}
-
-void Robot::retroceder_y(vector<coor> destino) {
-  for(int i = posicion_robot[1]; i > destino[1]; i--) {
-    posicion_robot[1]--;
-  }
+void Robot::set_Posicion_Y(coor y) {
+	posicion_robot[1] = y;
 }
 
 void Robot::depositar() {
