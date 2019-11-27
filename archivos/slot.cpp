@@ -1,9 +1,9 @@
 #include "slot.h"
 #include <iostream>
 
-Slot::Slot(numero _numero_slot, vector<coor> _posicion_slot, cantidad _capacidad, estado _estado_slot, vector<Producto*> _productos) {
+Slot::Slot(numero _numero_slot, coor x, coor y, cantidad _capacidad, estado _estado_slot, vector<Producto*> _productos) {
   numero_slot = _numero_slot;
-  posicion_slot = _posicion_slot;
+  posicion_slot = {x, y};
   capacidad = _capacidad;
   estado_slot = _estado_slot;
   productos = _productos;
