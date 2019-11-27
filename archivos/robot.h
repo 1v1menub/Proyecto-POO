@@ -1,4 +1,4 @@
-#ifdef ROBOT_H
+#ifndef ROBOT_H
 #define ROBOT_H
 
 #include <vector>
