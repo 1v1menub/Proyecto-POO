@@ -16,11 +16,9 @@ class Robot {
     vector<coor> posicion_robot;
     Producto* contenido;
   public:
-    Robot(numero numero_robot, estado estado_robot, vector<coor> posicion_home, vector<coor> posicion_robot, Producto* contenido);
-    void avanzar_x(vector<coor> destino);
-    void avanzar_y(vector<coor> destino);
-    void retroceder_x(vector<coor> destino);
-    void retroceder_y(vector<coor> destino);
+    Robot(numero numero_robot, estado estado_robot, coor x, coor y, vector<coor> posicion_robot, Producto* contenido);
+    void set_Posicion_X(coor x);
+	  void set_Posicion_Y(coor y);
     void depositar();
     void cargar(Producto* producto);
     void esperar();
