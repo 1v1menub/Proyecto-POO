@@ -17,7 +17,7 @@ class Slot {
     estado estado_slot;
     vector<Producto*> productos;
   public:
-    Slot(numero numero_slot, vector<coor> posicion_slot, cantidad capacidad, estado estado_slot, vector<Producto*> productos);
+    Slot(numero numero_slot, coor x, coor y, cantidad capacidad, estado estado_slot, vector<Producto*> productos);
     void agregar_producto(Producto* producto);
     void quitar_producto(Producto* producto);
     vector<Producto*> get_producto();
