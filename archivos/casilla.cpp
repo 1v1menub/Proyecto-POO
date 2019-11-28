@@ -1,29 +1,28 @@
-#include "casilla.h"
+#include "Casilla.h"
 
-Casilla::Casilla(longitud h, longitud w, coor x, coor y) {
-	height = h;
-	width = w;
-	posicion[0] = x;
-	posicion[1] = y;
-	lleno = 0;
-}
-void Casilla::set_estado(estado valor) {
-	//False si no esta lleno True si si lo esta
-	lleno = valor;
-}
-estado Casilla::get_estado() {
-	return lleno;
+Casilla::Casilla(numero_t n, coor x, coor y, score gs) {
+	posicion = { x, y };
+	numero = n;
+	gscore = gs;
 }
 
-longitud Casilla::get_width() {
-	return width;
-}
-
-longitud Casilla::get_height() {
-	return height;
-}
-
-std::vector Casilla::get_pos() {
+std::vector<coor> Casilla::get_pos() {
 	return posicion;
+}
+
+void Casilla::set_gscore(cantidad n) {
+	gscore = n;
+}
+
+cantidad Casilla::get_gscore() {
+	return gscore;
+}
+
+bool Casilla::get_estado() {
+	return estado;
+}
+
+int Casilla::get_numero() {
+	return numero;
 }
 
