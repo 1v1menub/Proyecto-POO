@@ -114,6 +114,17 @@ int main() {
 		Slot* pSlot = &pAlm->get_slots()[xFinal][yFinal];
 		system("cls");
 		entrega(pRobot, pSlot, pAlm);
+		
+		//Crea un archivo escribe el path
+		ofstream myfile;
+		vector<vector<coor>>matrix = pathFinder(pRobot, pSlot, pAlm);
+		myfile.open("Pasos.txt");
+		myfile << "Path: {";
+		for (int i = 0; i < matrix.size(); i++) {
+			myfile << "(" << matrix[i][0] << ", " << matrix[i][1] << " ), ";
+		}
+		myfile << "} \n";
+		myfile.close();
 	}
 }
 
