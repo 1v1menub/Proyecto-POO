@@ -1,19 +1,26 @@
+#ifndef CASILLA
+#define CASILLA
+
+
 #include "tipos.h"
 #include <vector>
+#include "Robot.h"
 
 class Casilla {
-private:
-	longitud height;
-	longitud width;
+	int numero;
 	std::vector<coor> posicion;
-	estado lleno;
-	
+	bool estado = false;
+	cantidad gscore;
+
+
 public:
-	Casilla(longitud h, longitud w, coor x, coor y);
-	void set_estado(estado valor);
-	longitud get_height();
-	longitud get_width();
-	std::vector get_pos();
-	estado get_estado();
+	Casilla(numero_t n, coor x, coor y, score gs);
+	std::vector <coor> get_pos();
+	cantidad get_gscore();
+	void set_gscore(cantidad n);
+	bool get_estado();
+	int get_numero();
 
 };
+
+#endif
