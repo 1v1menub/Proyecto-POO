@@ -5,7 +5,7 @@
 
 typedef unsigned int longitud;
 typedef unsigned int cantidad;
-typedef unsigned int numero;
+typedef unsigned int numero_t;
 typedef int coor;
 typedef std::string nombre;
 typedef bool estado;
