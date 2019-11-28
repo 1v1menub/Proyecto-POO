@@ -5,6 +5,7 @@
 #include "robot.h"
 #include "tipos.h"
 #include "slot.h"
+#include "funciones.h"
 #include <iostream>
 using namespace std;
 
