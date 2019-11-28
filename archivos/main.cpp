@@ -1,98 +1,119 @@
-//proximamente :'v
-//combalidaciones cin cout bienvenido numero de casilla,etc
-#include "casilla.h"
-#include "producto.h"
-#include "robot.h"
-#include "tipos.h"
-#include "slot.h"
-#include "funciones.h"
 #include <iostream>
-using namespace std;
+#include "Almacen.h"
+#include "Casilla.h"
+#include "funciones.h"
+#include "Preset.cpp"
 
-/*  EJEMPLO DONDE SE CREA UN ALMACEN DE LA SIGUIENTE MANERA:
-    .|..|..|..|..|..|..|..|..|..|..|.
-    .|..|..|..|..|..|..|..|..|..|..|.
-    .|..|..|.(1).|..|..|..|..|..|..|.
-    .|..|..|..|..|..|..|..|..|..|..|.
-    .|..|..|..|..|..|..|..|..|..|..|.
-    .|..|..|..|..|..|..|..|..|..|..|.
-    .|..|..|..|.[1][2][3].|..|..|..|.
-    .|..|..|..|..|..|..|..|..|..|..|.
-    .|..|..|..|..|..|..|..|.[4].|..|.
-    .|..|..|..|..|..|..|..|..|..|..|.
-    Se busca el camino mas corto del robot 1 al slot 4, e imprime 
-    .|..|..|..|..|..|..|..|..|..|..|.
-    .|..|..|..|..|..|..|..|..|..|..|.
-    .|..|..|.(1).|..|..|..|..|..|..|.
-    .|..|..|. o .|..|..|..|..|..|..|.
-    .|..|..|. o .|..|..|..|..|..|..|.
-    .|..|..|. o .|..|..|..|..|..|..|.
-    .|..|..|. o [5][6][7].|..|..|..|.
-    .|..|..|. o .|..|..|..|..|..|..|.
-    .|..|..|. o  o  o  o  o [14].|..|.
-    .|..|..|..|..|..|..|..|..|..|..|.
-    
-Almacen alm = Almacen(10, 11);
-Almacen* pAlm = &alm;
+
+
 
 int main() {
+	cout << "BIENVENIDO!" << endl;
+	cout << "------------------------" << endl;
+	cout << "Que desea hacer?" << endl;
+	cout << "[1] Cargar preset" << endl;
+	cout << "[2] Personalizado" << endl;
+	int opcion;
+	cin >> opcion;
+	system("cls");
+	if (opcion == 1) {
+		cout << "Escoja una preset: " << endl;
+		cout << "[1] Cueva" << endl;
+		cout << "[2] Serpiente" << endl;
+		cin >> opcion;
+		system("cls");
+		if (opcion == 1) {
+			preset1();
+		}
+		else if (opcion == 2) {
+			preset2();
+		}
+	}
+	if (opcion == 2) {
+		//creacion del objeto -- en progreso
+	   //combalidaciones
+		int numero_robots = 0, filas = 0, columnas = 0, numero_slots = 0;
+		
+		//bienvenida al programa
 
-	Robot robot1 = Robot(1, 2, 3);
-	Robot* Probot1 = &robot1;
+		cout << "Ingrese el numero de filas :";
+		cin >> filas;
+		cout << "Ingrese el numero de columnas: ";
+		cin >> columnas;
 
-	Slot slot1 = Slot(1, 8, 8);
-	Slot* Pslot1 = &slot1;
+		Almacen alm = Almacen(filas, columnas);
+		Almacen* pAlm = &alm;
 
-	Slot slot2 = Slot(1, 6, 6);
-	Slot* Pslot2 = &slot2;
-	Slot slot3 = Slot(1, 6, 5);
-	Slot* Pslot3 = &slot3;
-	Slot slot4 = Slot(1, 6, 4);
-	Slot* Pslot4 = &slot4;
+		//numero de robots
+		cout << "Ingrese el numero de robots: ";
+		cin >> numero_robots;
+		//estableciendo la posicion de de cada uno de los robots
 
-	alm.add_robot(Probot1);
-	coor posxi = robot1.get_posicion_robot()[0];
-	coor posxj = robot1.get_posicion_robot()[1];
+		vector<Robot> robots;
+		for (int i = 0; i < numero_robots; i++)
+		{
+			int x = 0;
+			int y = 0;
+			cout << "Ingrese el posicion x del robot: ";
+			cin >> x;
+			cout << "Ingrese la posicion y del robot: ";
+			cin >> y;
+			robots.emplace_back(Robot(i, x, y));
+			pAlm->add_robot(&robots[i]);
+		}
+		//numero de slots
+		cout << "Ingrese el numero de slots: ";
+		cin >> numero_slots;
+		//estableciendo la posicion de de cada uno de los robots
 
-	alm.add_slot(Pslot1);
-	alm.add_slot(Pslot2);
-	alm.add_slot(Pslot3);
-	alm.add_slot(Pslot4);
+		vector<Slot> slots;
+		for (int i = 0; i < numero_slots; i++)
+		{
+			int x = 0, y = 0;
+			cout << "Ingrese el posicion x del slot: ";
+			cin >> x;
+			cout << "Ingrese la posicion y del slot: ";
+			cin >> y;
+			slots.emplace_back(Slot(i, x, y));
+			pAlm->add_slot(&slots[i]);
+		}
+		//Accion a realizar
+		mostrarAlmacen(pAlm);
 
-	pAlm->get_pCasillas()[Pslot1->get_posicion_slot()[0]][Pslot1->get_posicion_slot()[1]]->set_gscore(0);
-	setScore(pAlm, pAlm->get_pCasillas()[Pslot1->get_posicion_slot()[0]][Pslot1->get_posicion_slot()[1]]);
+		int nrobot = 0;
+		int nslot = 0;
+		string producto;
+		cout << "Que robot desea que realize una accion? " << endl;
+		cin >> nrobot;
+		cout << "Qu pruducto desea que transporte? " << endl;
+		cin >> producto;
+		cout << "A que slot desea que lo lleve? " << endl;
+		cin >> nslot;
 
-	mostrarAlmacen(pAlm);
+		int xInicial = 0;
+		int yInicial = 0;
+		int xFinal = 0;
+		int yFinal = 0;
 
-	imprimirMatriz(pathFinder(Probot1, Pslot1, pAlm));
-	mostrarAlmacenPath(pAlm, pathFinder(Probot1, Pslot1, pAlm));
+		for (int i = 0; i < pAlm->get_robots().size(); i++) {
+			if (nrobot == i) {
+				xInicial = pAlm->get_robots()[i]->get_posicion_robot()[0];
+				yInicial = pAlm->get_robots()[i]->get_posicion_robot()[1];
+			}
+		}
 
+		for (int i = 0; i < pAlm->get_slots().size(); i++) {
+			if (nslot == i) {
+				xFinal = pAlm->get_slots()[i]->get_posicion_slot()[0];
+				yFinal = pAlm->get_slots()[i]->get_posicion_slot()[1];
+			}
+		}
+
+		pAlm->get_robots()[xInicial][yInicial].set_producto(producto);
+		Robot* pRobot = &pAlm->get_robots()[xInicial][yInicial];
+		Slot* pSlot = &pAlm->get_slots()[xFinal][yFinal];
+		system("cls");
+		entrega(pRobot, pSlot, pAlm);
+	}
 }
-*/
-
-int main(){
-    //creacion del objeto -- en progreso
-    //combalidaciones
-    int numero_robots,filas,columnas;
-    int x,y;
-    //bienvenida al programa
-    cout<<"Bienvenido!"<<endl;
-    cout<<"------------------------"<<endl;
-    cout<<"Ingrese el numero de filas :";
-    cin>>filas;
-    cout<<"Ingrese el numero de columnas: ";
-    //-->creacion de la casilla
-    cin>>columnas;
-    //numero de robots
-    cout<<"Ingrese el numero de robots: ";
-    cin>>numero_robots;
-    //estableciendo la posicion de de cada uno de los robots
-    for(int i=0; i<numero_robots; i++)
-    {
-        cout<<"Ingrese el posicion x del robot: ";
-        cin>>x;
-        cout<<"Ingrese la posicion y del robot: ";
-        cin>>y;
-    }
-    //para que se pueda realizar las acciones es necesario haber creado al objeto(en pogreso)
 
