@@ -1,3 +1,5 @@
+// prueba.h: archivo de inclusión para archivos de inclusión estándar del sistema,
+// o archivos de inclusión específicos de un proyecto.
 #ifndef funciones
 #define funciones
 
@@ -8,7 +10,7 @@
 
 
 void mostrarAlmacen(Almacen* alm) { //Imprime el almacen en consola
-
+	std::cout << "El almacen se ve de la siguiente forma: " << std::endl << std::endl;
 	bool crobot = false;
 	bool cslot = false;
 	int cr = 0;
@@ -32,19 +34,31 @@ void mostrarAlmacen(Almacen* alm) { //Imprime el almacen en consola
 			}
 
 			if (crobot == true) {
-				std::cout << "(" << cr << ")";
-				crobot = false;
+				if (cr < 10) {
+					std::cout << "(0" << cr << ")";
+					crobot = false;
+				}
+				else {
+					std::cout << "(" << cr << ")";
+					crobot = false;
+				}
 				//Si en la casilla hay un robot, lo dibuja
 			}
 
 			else if (cslot == true) {
-				std::cout << "[" << cs << "]";
-				cslot = false;
+				if (cs < 10) {
+					std::cout << "[0" << cs << "]";
+					cslot = false;
+				}
+				else {
+					std::cout << "[" << cs << "]";
+					cslot = false;
+				}
 				//Si en la casilla hay un slot, lo dibuja
 			}
 
 			else {
-				std::cout << ".|.";
+				std::cout << "....";
 				//Dibuja un pixel vacio
 			}
 		}
@@ -128,22 +142,22 @@ vector<vector<coor>> pathFinder(Robot* inicio, Slot* fin, Almacen* alm) { // Enc
 		coor newXRobot = 0;
 		coor newYRobot = 0;
 		//Busca la casilla adyacente con menor score
-		if (minimo > alm->get_pCasillas()[xRobot + 1][yRobot]->get_gscore() && xRobot + 1 < alm->get_rows()) {
+		if (xRobot + 1 < alm->get_rows() && minimo > alm->get_pCasillas()[xRobot + 1][yRobot]->get_gscore()) {
 			newXRobot = alm->get_pCasillas()[xRobot + 1][yRobot]->get_pos()[0];
 			newYRobot = alm->get_pCasillas()[xRobot + 1][yRobot]->get_pos()[1];
 			minimo = alm->get_pCasillas()[xRobot + 1][yRobot]->get_gscore();
 		}
-		if (minimo > alm->get_pCasillas()[xRobot - 1][yRobot]->get_gscore() && xRobot - 1 >= 0) {
+		if (xRobot - 1 >= 0 && minimo > alm->get_pCasillas()[xRobot - 1][yRobot]->get_gscore() ) {
 			newXRobot = alm->get_pCasillas()[xRobot - 1][yRobot]->get_pos()[0];
 			newYRobot = alm->get_pCasillas()[xRobot - 1][yRobot]->get_pos()[1];
 			minimo = alm->get_pCasillas()[xRobot - 1][yRobot]->get_gscore();
 		}
-		if (minimo > alm->get_pCasillas()[xRobot][yRobot + 1]->get_gscore() && yRobot + 1 < alm->get_cols()) {
+		if (yRobot - 1 < alm->get_cols() && minimo > alm->get_pCasillas()[xRobot][yRobot + 1]->get_gscore()) {
 			newXRobot = alm->get_pCasillas()[xRobot][yRobot + 1]->get_pos()[0];
 			newYRobot = alm->get_pCasillas()[xRobot][yRobot + 1]->get_pos()[1];
 			minimo = alm->get_pCasillas()[xRobot][yRobot + 1]->get_gscore();
 		}
-		if (minimo > alm->get_pCasillas()[xRobot][yRobot - 1]->get_gscore() && yRobot - 1 >= 0){
+		if (yRobot - 1 >= 0 && minimo > alm->get_pCasillas()[xRobot][yRobot - 1]->get_gscore()){
 			newXRobot = alm->get_pCasillas()[xRobot][yRobot - 1]->get_pos()[0];
 			newYRobot = alm->get_pCasillas()[xRobot][yRobot - 1]->get_pos()[1];
 			minimo = alm->get_pCasillas()[xRobot][yRobot - 1]->get_gscore();
@@ -151,6 +165,47 @@ vector<vector<coor>> pathFinder(Robot* inicio, Slot* fin, Almacen* alm) { // Enc
 		xRobot = newXRobot;
 		yRobot = newYRobot;
 		pasos.push_back({xRobot, yRobot});
+	}
+	return pasos;
+}
+
+vector<vector<coor>> pathFinderCasilla(Robot* inicio, Casilla* fin, Almacen* alm) { // Encuentra el camino mas corto y devuelve un vector con la sucesion de coordenadas
+	coor xMeta = fin->get_pos()[0];							//para llegar al slot
+	coor yMeta = fin->get_pos()[1];
+	setScore(alm, alm->get_pCasillas()[xMeta][yMeta]);
+
+	vector<vector<coor>> pasos;
+	coor xRobot = inicio->get_posicion_robot()[0];
+	coor yRobot = inicio->get_posicion_robot()[1];
+	int minimo = 1000;
+
+	while (minimo != 1) { // Se detiene cuando esta en una casilla adyacente al slot
+		coor newXRobot = 0;
+		coor newYRobot = 0;
+		//Busca la casilla adyacente con menor score
+		if (xRobot + 1 < alm->get_rows() && minimo > alm->get_pCasillas()[xRobot + 1][yRobot]->get_gscore()) {
+			newXRobot = alm->get_pCasillas()[xRobot + 1][yRobot]->get_pos()[0];
+			newYRobot = alm->get_pCasillas()[xRobot + 1][yRobot]->get_pos()[1];
+			minimo = alm->get_pCasillas()[xRobot + 1][yRobot]->get_gscore();
+		}
+		if (xRobot - 1 >= 0 && minimo > alm->get_pCasillas()[xRobot - 1][yRobot]->get_gscore()) {
+			newXRobot = alm->get_pCasillas()[xRobot - 1][yRobot]->get_pos()[0];
+			newYRobot = alm->get_pCasillas()[xRobot - 1][yRobot]->get_pos()[1];
+			minimo = alm->get_pCasillas()[xRobot - 1][yRobot]->get_gscore();
+		}
+		if (yRobot - 1 < alm->get_cols() && minimo > alm->get_pCasillas()[xRobot][yRobot + 1]->get_gscore()) {
+			newXRobot = alm->get_pCasillas()[xRobot][yRobot + 1]->get_pos()[0];
+			newYRobot = alm->get_pCasillas()[xRobot][yRobot + 1]->get_pos()[1];
+			minimo = alm->get_pCasillas()[xRobot][yRobot + 1]->get_gscore();
+		}
+		if (yRobot - 1 >= 0 && minimo > alm->get_pCasillas()[xRobot][yRobot - 1]->get_gscore()) {
+			newXRobot = alm->get_pCasillas()[xRobot][yRobot - 1]->get_pos()[0];
+			newYRobot = alm->get_pCasillas()[xRobot][yRobot - 1]->get_pos()[1];
+			minimo = alm->get_pCasillas()[xRobot][yRobot - 1]->get_gscore();
+		}
+		xRobot = newXRobot;
+		yRobot = newYRobot;
+		pasos.push_back({ xRobot, yRobot });
 	}
 	return pasos;
 }
@@ -190,31 +245,68 @@ void mostrarAlmacenPath(Almacen* alm, vector<vector<coor>> path) { //Imprime el 
 			for (auto pth : path) {
 				if (c->get_pos() == pth) {
 					cpath = true;
-					cs++;
 				}
 			}
 
 			if (crobot == true) {
-				std::cout << "(" << cr << ")";
-				crobot = false;
+				if (cr < 10) {
+					std::cout << "(0" << cr << ")";
+					crobot = false;
+				}
+				else {
+					std::cout << "(" << cr << ")";
+					crobot = false;
+				}
 			}
 
 			else if (cslot == true) {
-				std::cout << "[" << cs << "]";
-				cslot = false;
+				if (cs < 10) {
+					std::cout << "[0" << cs << "]";
+					cslot = false;
+				}
+				else {
+					std::cout << "[" << cs << "]";
+					cslot = false;
+				}
 			}
 
 			else if (cpath == true) {
-				std::cout << " o ";
+				std::cout << "    ";
 				cpath = false;
 			}
 
 			else {
-				std::cout << ".|.";
+				std::cout << "....";
 			}
 		}
 		std::cout << std::endl;
 	}
 }
 
+void entrega(Robot* bot, Slot* slt, Almacen* pAlm) {
+	std::cout << std::endl << "El robot " << bot->get_numero_robot() << " tiene un(a) " << bot->get_producto() << std::endl << std::endl;
+	pAlm->get_pCasillas()[slt->get_posicion_slot()[0]][slt->get_posicion_slot()[1]]->set_gscore(0);
+
+	setScore(pAlm, pAlm->get_pCasillas()[slt->get_posicion_slot()[0]][slt->get_posicion_slot()[1]]);
+	//imprimirScore(pAlm);
+	std::cout << "El robot " << bot->get_numero_robot() << " seguira el siguiente camino: ";
+	imprimirMatriz(pathFinder(bot, slt, pAlm));
+	std::cout << std::endl;
+	mostrarAlmacenPath(pAlm, pathFinder(bot, slt, pAlm));
+	std::cout << std::endl;
+	slt->set_pruducto(bot->get_producto());
+	bot->set_producto("");
+	std::cout << std::endl << "El slot " << slt->get_numero_slot() << " contiene: " << slt->get_producto();
+
+	string continuar;
+	std::cout << std::endl << "Escriba 1 para continuar..." << std::endl;;
+	cin >> continuar;
+	system("cls");
+	std::cout << "El robot " << bot->get_numero_robot() << " seguira el siguiente camino de regrerso: " << endl << endl;
+	mostrarAlmacenPath(pAlm, pathFinderCasilla(bot, pAlm->get_pCasillas()[bot->get_home_robot()[0]][bot->get_home_robot()[1]], pAlm));
+}
+
+
+
+#endif
 #endif
