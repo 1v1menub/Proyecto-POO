@@ -36,7 +36,7 @@ int main() {
 		
 		//bienvenida al programa
 
-		cout << "Ingrese el numero de filas :";
+		cout << "Ingrese el numero de filas: ";
 		cin >> filas;
 		cout << "Ingrese el numero de columnas: ";
 		cin >> columnas;
@@ -54,9 +54,9 @@ int main() {
 		{
 			int x = 0;
 			int y = 0;
-			cout << "Ingrese el posicion x del robot " << i+1 << ":";
+			cout << "Ingrese el posicion x del robot " << i+1 << ": ";
 			cin >> x;
-			cout << "Ingrese la posicion y del robot " << i+1 << ":";
+			cout << "Ingrese la posicion y del robot " << i+1 << ": ";
 			cin >> y;
 			robots.emplace_back(Robot(i, x, y));
 			pAlm->add_robot(&robots[i]);
@@ -70,9 +70,9 @@ int main() {
 		for (int i = 0; i < numero_slots; i++)
 		{
 			int x = 0, y = 0;
-			cout << "Ingrese el posicion x del slot " << i+1 << ":";
+			cout << "Ingrese el posicion x del slot " << i+1 << ": ";
 			cin >> x;
-			cout << "Ingrese la posicion y del slot " << i+1 << ":";
+			cout << "Ingrese la posicion y del slot " << i+1 << ": ";
 			cin >> y;
 			slots.emplace_back(Slot(i, x, y));
 			pAlm->add_slot(&slots[i]);
@@ -85,7 +85,7 @@ int main() {
 		string producto;
 		cout << "Que robot desea que realize una accion? " << endl;
 		cin >> nrobot;
-		cout << "Qu pruducto desea que transporte? " << endl;
+		cout << "Que pruducto desea que transporte? " << endl;
 		cin >> producto;
 		cout << "A que slot desea que lo lleve? " << endl;
 		cin >> nslot;
