@@ -1,4 +1,4 @@
-#include "Casilla.h"
+#include "casilla.h"
 
 Casilla::Casilla(numero_t n, coor x, coor y, score gs) {
 	posicion = { x, y };
