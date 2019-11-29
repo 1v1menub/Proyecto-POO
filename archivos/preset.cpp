@@ -170,7 +170,7 @@ void preset2() {
 	coor posxi = robot1.get_posicion_robot()[0];
 	coor posxj = robot1.get_posicion_robot()[1];
 	
-	Probot1->set_producto("USB");
+	Probot1->set_producto("Carbon");
 	
 
 
@@ -396,7 +396,7 @@ void preset5() {
 	alm.add_slot(Pslot25);
 	alm.add_slot(Pslot26);
 
-	Probot1->set_producto("USB");
+	Probot1->set_producto("Cepillo de dientes");
 
 	mostrarAlmacen(pAlm);
 	string continuar;
