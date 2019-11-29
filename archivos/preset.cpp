@@ -221,3 +221,81 @@ void preset2() {
 
 	
 }
+
+void preset3() {
+    //Almacen
+    Almacen alm = Almacen(12, 12);
+    Almacen* pAlm = &alm;
+
+    //Robot
+    Robot robot1 = Robot(1, 11, 11);
+    Robot* Probot1 = &robot1;
+
+    //Slot
+    Slot slot1 = Slot(1, 10, 10);
+    Slot* Pslot1 = &slot1;
+    Slot slot2 = Slot(2, 5, 3);
+    Slot* Pslot2 = &slot2;
+    Slot slot3 = Slot(3, 7, 8);
+    Slot* Pslot3 = &slot3;
+    Slot slot4 = Slot(4, 7, 2);
+    Slot* Pslot4 = &slot4;
+    Slot slot5 = Slot(5, 2, 10);
+    Slot* Pslot5 = &slot5;
+    Slot slot6 = Slot(6, 9, 11);
+    Slot* Pslot6 = &slot6;
+    Slot slot7 = Slot(7, 10, 0);
+    Slot* Pslot7 = &slot7;
+    Slot slot8 = Slot(8, 8, 5);
+    Slot* Pslot8 = &slot8;
+    Slot slot9 = Slot(9, 4, 6);
+    Slot* Pslot9 = &slot9;
+    Slot slot10 = Slot(10, 4, 1);
+    Slot* Pslot10 = &slot10;
+    Slot slot11 = Slot(11, 1, 1);
+    Slot* Pslot11 = &slot11;
+    Slot slot12 = Slot(12, 1, 7);
+    Slot* Pslot12 = &slot12;
+    Slot slot13 = Slot(13, 2, 3);
+    Slot* Pslot13 = &slot13;
+    Slot slot14 = Slot(14, 7, 9);
+    Slot* Pslot14 = &slot14;
+    Slot slot15 = Slot(15, 5, 8);
+    Slot* Pslot15 = &slot15;
+    Slot slot16 = Slot(16, 4, 7);
+    Slot* Pslot16 = &slot16;
+    Slot slot17 = Slot(17, 2, 2);
+    Slot* Pslot17 = &slot17;
+
+
+
+    //Agregar robot y slots al almacen
+    alm.add_slot(Pslot1);
+    alm.add_slot(Pslot2);
+    alm.add_slot(Pslot3);
+    alm.add_slot(Pslot4);
+    alm.add_slot(Pslot5);
+    alm.add_slot(Pslot6);
+    alm.add_slot(Pslot7);
+    alm.add_slot(Pslot8);
+    alm.add_slot(Pslot9);
+    alm.add_slot(Pslot10);
+    alm.add_slot(Pslot11);
+    alm.add_slot(Pslot12);
+    alm.add_slot(Pslot13);
+    alm.add_slot(Pslot14);
+    alm.add_slot(Pslot15);
+    alm.add_slot(Pslot16);
+    alm.add_slot(Pslot17);
+    alm.add_robot(Probot1);
+   
+
+    Probot1->set_producto("Linterna");
+
+    mostrarAlmacen(pAlm);
+    string continuar;
+    std::cout << std::endl << "Escriba 1 para continuar..." << std::endl;;
+    cin >> continuar;
+    system("cls");
+    entrega(Probot1, Pslot11, pAlm);
+}
