@@ -335,7 +335,7 @@ void preset4() {
     alm.add_slot(Pslot7);
 
 
-    Probot1->set_producto("USB");
+    Probot1->set_producto("Motocicleta");
 
     mostrarAlmacen(pAlm);
     string continuar;
