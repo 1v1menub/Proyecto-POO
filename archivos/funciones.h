@@ -6,7 +6,7 @@
 #pragma once
 
 #include <iostream>
-#include "Almacen.h"
+#include "almacen.h"
 
 
 void mostrarAlmacen(Almacen* alm) { //Imprime el almacen en consola
