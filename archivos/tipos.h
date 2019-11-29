@@ -9,5 +9,6 @@ typedef unsigned int numero_t;
 typedef int coor;
 typedef std::string nombre;
 typedef bool estado;
+typedef int score;
 
 #endif
