@@ -299,6 +299,52 @@ void preset3() {
     system("cls");
     entrega(Probot1, Pslot11, pAlm);
 }
+void preset4() {
+    //Almacen
+    Almacen alm = Almacen(10, 10);
+    Almacen* pAlm = &alm;
+
+    //Robot
+    Robot robot1 = Robot(1, 8, 7);
+    Robot* Probot1 = &robot1;
+
+    //Slot
+    Slot slot1 = Slot(1, 4, 4);
+    Slot* Pslot1 = &slot1;
+    Slot slot2 = Slot(2,5,4);
+    Slot* Pslot2 = &slot2;
+    Slot slot3 = Slot(3,6,4);
+    Slot* Pslot3 = &slot3;
+    Slot slot4 = Slot(4,7,4);
+    Slot* Pslot4 = &slot4;
+    Slot slot5 = Slot(5,7,5);
+    Slot* Pslot5 = &slot5;
+    Slot slot6 = Slot(6,7,6);
+    Slot* Pslot6 = &slot6;
+    Slot slot7 = Slot(7,7,7);
+    Slot* Pslot7 = &slot7;
+
+    //Agregar robot y slots al almacen
+    alm.add_robot(Probot1);
+    alm.add_slot(Pslot1);
+    alm.add_slot(Pslot2);
+    alm.add_slot(Pslot3);
+    alm.add_slot(Pslot4);
+    alm.add_slot(Pslot5);
+    alm.add_slot(Pslot6);
+    alm.add_slot(Pslot7);
+
+
+    Probot1->set_producto("USB");
+
+    mostrarAlmacen(pAlm);
+    string continuar;
+    std::cout << std::endl << "Escriba 1 para continuar..." << std::endl;;
+    cin >> continuar;
+    system("cls");
+    entrega(Probot1, Pslot1, pAlm);
+}
+
 
 void preset5() {
 	//Almacen
