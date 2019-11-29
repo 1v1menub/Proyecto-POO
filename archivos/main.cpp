@@ -54,9 +54,9 @@ int main() {
 		{
 			int x = 0;
 			int y = 0;
-			cout << "Ingrese el posicion x del robot: ";
+			cout << "Ingrese el posicion x del robot " << i+1 << ":";
 			cin >> x;
-			cout << "Ingrese la posicion y del robot: ";
+			cout << "Ingrese la posicion y del robot " << i+1 << ":";
 			cin >> y;
 			robots.emplace_back(Robot(i, x, y));
 			pAlm->add_robot(&robots[i]);
@@ -70,9 +70,9 @@ int main() {
 		for (int i = 0; i < numero_slots; i++)
 		{
 			int x = 0, y = 0;
-			cout << "Ingrese el posicion x del slot: ";
+			cout << "Ingrese el posicion x del slot " << i+1 << ":";
 			cin >> x;
-			cout << "Ingrese la posicion y del slot: ";
+			cout << "Ingrese la posicion y del slot " << i+1 << ":";
 			cin >> y;
 			slots.emplace_back(Slot(i, x, y));
 			pAlm->add_slot(&slots[i]);
