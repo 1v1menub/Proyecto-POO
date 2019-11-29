@@ -299,3 +299,109 @@ void preset3() {
     system("cls");
     entrega(Probot1, Pslot11, pAlm);
 }
+
+void preset5() {
+	//Almacen
+	Almacen alm = Almacen(8, 15);
+	Almacen* pAlm = &alm;
+
+
+
+	//Robot
+	Robot robot1 = Robot(1, 0, 0);
+	Robot* Probot1 = &robot1;
+
+	//Slot
+	Slot slot1 = Slot(1, 4, 14);
+	Slot* Pslot1 = &slot1;
+	//P
+	Slot slot2 = Slot(2, 1, 1);
+	Slot* Pslot2 = &slot2;
+	Slot slot3 = Slot(3, 2, 1);
+	Slot* Pslot3 = &slot3;
+	Slot slot4 = Slot(2, 3, 1);
+	Slot* Pslot4 = &slot4;
+	Slot slot5 = Slot(3, 4, 1);
+	Slot* Pslot5 = &slot5;
+	Slot slot22 = Slot(3, 5, 1);
+	Slot* Pslot22 = &slot22;
+	Slot slot7 = Slot(2, 1, 2);
+	Slot* Pslot7 = &slot7;
+	Slot slot8 = Slot(3, 3, 2);
+	Slot* Pslot8 = &slot8;
+	Slot slot9 = Slot(2, 2, 3);
+	Slot* Pslot9 = &slot9;
+	//O
+	Slot slot10 = Slot(3, 2, 5);
+	Slot* Pslot10 = &slot10;
+	Slot slot11 = Slot(2, 3, 5);
+	Slot* Pslot11 = &slot11;
+	Slot slot24 = Slot(2, 4, 5);
+	Slot* Pslot24 = &slot24;
+	Slot slot12 = Slot(4, 1, 6);
+	Slot* Pslot12 = &slot12;
+	Slot slot13 = Slot(3, 5, 6);
+	Slot* Pslot13 = &slot13;
+	Slot slot14 = Slot(2, 2, 7);
+	Slot* Pslot14 = &slot14;
+	Slot slot15 = Slot(3, 3, 7);
+	Slot* Pslot15 = &slot15;
+	Slot slot23 = Slot(3, 4, 7);
+	Slot* Pslot23 = &slot23;
+	//O
+	Slot slot16 = Slot(3, 2, 9);
+	Slot* Pslot16 = &slot16;
+	Slot slot17 = Slot(2, 3, 9);
+	Slot* Pslot17 = &slot17;
+	Slot slot25 = Slot(2, 4, 9);
+	Slot* Pslot25 = &slot25;
+	Slot slot18 = Slot(4, 1, 10);
+	Slot* Pslot18 = &slot18;
+	Slot slot19 = Slot(3, 5, 10);
+	Slot* Pslot19 = &slot19;
+	Slot slot20 = Slot(2, 2, 11);
+	Slot* Pslot20 = &slot20;
+	Slot slot21 = Slot(3, 3, 11);
+	Slot* Pslot21 = &slot21;
+	Slot slot26 = Slot(3, 4, 11);
+	Slot* Pslot26 = &slot26;
+
+
+	//Agregar robot y slots al almacen
+	alm.add_slot(Pslot1);
+	alm.add_robot(Probot1);
+
+	alm.add_slot(Pslot2);
+	alm.add_slot(Pslot3);
+	alm.add_slot(Pslot4);
+	alm.add_slot(Pslot5);
+	alm.add_slot(Pslot7);
+	alm.add_slot(Pslot8);
+	alm.add_slot(Pslot9);
+	alm.add_slot(Pslot10);
+	alm.add_slot(Pslot11);
+	alm.add_slot(Pslot12);
+	alm.add_slot(Pslot13);
+	alm.add_slot(Pslot14);
+	alm.add_slot(Pslot15);
+	alm.add_slot(Pslot16);
+	alm.add_slot(Pslot17);
+	alm.add_slot(Pslot18);
+	alm.add_slot(Pslot19);
+	alm.add_slot(Pslot20);
+	alm.add_slot(Pslot21);
+	alm.add_slot(Pslot22);
+	alm.add_slot(Pslot23);
+	alm.add_slot(Pslot24);
+	alm.add_slot(Pslot25);
+	alm.add_slot(Pslot26);
+
+	Probot1->set_producto("USB");
+
+	mostrarAlmacen(pAlm);
+	string continuar;
+	std::cout << std::endl << "Escriba 1 para continuar..." << std::endl;;
+	cin >> continuar;
+	system("cls");
+	entrega(Probot1, Pslot1, pAlm);
+}
