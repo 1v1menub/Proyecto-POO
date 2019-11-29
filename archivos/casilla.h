@@ -4,7 +4,7 @@
 
 #include "tipos.h"
 #include <vector>
-#include "Robot.h"
+#include "robot.h"
 
 class Casilla {
 	int numero;
