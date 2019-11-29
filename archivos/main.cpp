@@ -3,6 +3,7 @@
 #include "casilla.h"
 #include "funciones.h"
 #include "preset.cpp"
+#include <fstream>
 
 
 
