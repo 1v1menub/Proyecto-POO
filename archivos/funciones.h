@@ -303,8 +303,9 @@ void entrega(Robot* bot, Slot* slt, Almacen* pAlm) {
 	cin >> continuar;
 	system("cls");
 	std::cout << "El robot " << bot->get_numero_robot() << " seguira el siguiente camino de regrerso: " << endl << endl;
-	mostrarAlmacenPath(pAlm, pathFinderCasilla(bot, pAlm->get_pCasillas()[bot->get_home_robot()[0]][bot->get_home_robot()[1]], pAlm));
+	mostrarAlmacenPath(pAlm, pathFinder(bot, slt, pAlm));
 }
+
 
 
 
