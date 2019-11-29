@@ -1,4 +1,4 @@
-#include "Almacen.h"
+#include "almacen.h"
 
 Almacen::Almacen(cantidad r, cantidad c) {
 	rows = r;
