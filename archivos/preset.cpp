@@ -298,6 +298,9 @@ void preset3() {
     cin >> continuar;
     system("cls");
     entrega(Probot1, Pslot11, pAlm);
+    Probot1->set_producto("Bateria");
+    std::cout << std::endl << "Siguiente entrega:" << std::endl;;
+    entrega(Probot1, Pslot2, pAlm);
 }
 void preset4() {
     //Almacen
