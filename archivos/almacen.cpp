@@ -31,11 +31,11 @@ void Almacen::add_slot(Slot* s) {
 	slots.push_back(s);
 }
 
-int Almacen::get_cols() {
+cantidad Almacen::get_cols() {
 	return cols;
 }
 
-int Almacen::get_rows() {
+cantidad Almacen::get_rows() {
 	return rows;
 }
 
