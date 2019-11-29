@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Almacen.h"
-#include "Casilla.h"
+#include "almacen.h"
+#include "casilla.h"
 #include "funciones.h"
 
 void preset1() {
