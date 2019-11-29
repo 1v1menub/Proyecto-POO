@@ -152,7 +152,7 @@ vector<vector<coor>> pathFinder(Robot* inicio, Slot* fin, Almacen* alm) { // Enc
 			newYRobot = alm->get_pCasillas()[xRobot - 1][yRobot]->get_pos()[1];
 			minimo = alm->get_pCasillas()[xRobot - 1][yRobot]->get_gscore();
 		}
-		if (yRobot - 1 < alm->get_cols() && minimo > alm->get_pCasillas()[xRobot][yRobot + 1]->get_gscore()) {
+		if (yRobot + 1 < alm->get_cols() && minimo > alm->get_pCasillas()[xRobot][yRobot + 1]->get_gscore()) {
 			newXRobot = alm->get_pCasillas()[xRobot][yRobot + 1]->get_pos()[0];
 			newYRobot = alm->get_pCasillas()[xRobot][yRobot + 1]->get_pos()[1];
 			minimo = alm->get_pCasillas()[xRobot][yRobot + 1]->get_gscore();
