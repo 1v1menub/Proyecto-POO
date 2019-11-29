@@ -1,4 +1,4 @@
-#include "Robot.h"
+#include "robot.h"
 
 Robot::Robot(numero_t _numero_robot, coor x, coor y) {// Producto* _contenido) {
 	numero_robot = _numero_robot;
