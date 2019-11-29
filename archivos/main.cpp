@@ -21,6 +21,9 @@ int main() {
 		cout << "Escoja una preset: " << endl;
 		cout << "[1] Cueva" << endl;
 		cout << "[2] Serpiente" << endl;
+		cout << "[3] Desorden" << endl;
+		cout << "[4] Inspirado" << endl;
+		cout << "[5] Easter egg" << endl;
 		cin >> opcion;
 		system("cls");
 		if (opcion == 1) {
@@ -28,6 +31,15 @@ int main() {
 		}
 		else if (opcion == 2) {
 			preset2();
+		}
+		else if (opcion == 3) {
+			preset3();
+		}
+		else if (opcion == 4) {
+			preset4();
+		}
+		else if (opcion == 5) {
+			preset5();
 		}
 	}
 	if (opcion == 2) {
