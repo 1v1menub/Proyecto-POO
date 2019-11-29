@@ -37,9 +37,9 @@ int main() {
 		
 		//bienvenida al programa
 
-		cout << "Ingrese el numero de filas: ";
-		cin >> filas;
 		cout << "Ingrese el numero de columnas: ";
+		cin >> filas;
+		cout << "Ingrese el numero de filas: ";
 		cin >> columnas;
 
 		Almacen alm = Almacen(filas, columnas);
@@ -55,9 +55,9 @@ int main() {
 		{
 			int x = 0;
 			int y = 0;
-			cout << "Ingrese el posicion x del robot " << i+1 << ": ";
-			cin >> x;
 			cout << "Ingrese la posicion y del robot " << i+1 << ": ";
+			cin >> x;
+			cout << "Ingrese la posicion x del robot " << i+1 << ": ";
 			cin >> y;
 			robots.emplace_back(Robot(i, x, y));
 			pAlm->add_robot(&robots[i]);
@@ -71,9 +71,9 @@ int main() {
 		for (int i = 0; i < numero_slots; i++)
 		{
 			int x = 0, y = 0;
-			cout << "Ingrese el posicion x del slot " << i+1 << ": ";
+			cout << "Ingrese el posicion y del slot " << i+1 << ": ";
 			cin >> x;
-			cout << "Ingrese la posicion y del slot " << i+1 << ": ";
+			cout << "Ingrese la posicion x del slot " << i+1 << ": ";
 			cin >> y;
 			slots.emplace_back(Slot(i, x, y));
 			pAlm->add_slot(&slots[i]);
