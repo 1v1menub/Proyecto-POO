@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Almacen.h"
-#include "Casilla.h"
+#include "almacen.h"
+#include "casilla.h"
 #include "funciones.h"
-#include "Preset.cpp"
+#include "preset.cpp"
 
 
 
