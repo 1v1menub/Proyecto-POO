@@ -1,5 +1,5 @@
-#ifndef CASILLA
-#define CASILLA
+#ifndef CASILLA_H
+#define CASILLA_H
 
 
 #include "tipos.h"
