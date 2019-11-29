@@ -15,6 +15,7 @@ int main() {
 	cout << "[1] Cargar preset" << endl;
 	cout << "[2] Personalizado" << endl;
 	int opcion;
+	int opcion2;
 	cin >> opcion;
 	system("cls");
 	if (opcion == 1) {
@@ -24,21 +25,21 @@ int main() {
 		cout << "[3] Desorden" << endl;
 		cout << "[4] Inspirado" << endl;
 		cout << "[5] Easter egg" << endl;
-		cin >> opcion;
+		cin >> opcion2;
 		system("cls");
-		if (opcion == 1) {
+		if (opcion2 == 1) {
 			preset1();
 		}
-		else if (opcion == 2) {
+		else if (opcion2 == 2) {
 			preset2();
 		}
-		else if (opcion == 3) {
+		else if (opcion2 == 3) {
 			preset3();
 		}
-		else if (opcion == 4) {
+		else if (opcion2 == 4) {
 			preset4();
 		}
-		else if (opcion == 5) {
+		else if (opcion2 == 5) {
 			preset5();
 		}
 	}
