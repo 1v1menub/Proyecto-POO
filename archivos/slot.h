@@ -1,5 +1,5 @@
-#ifndef SLOT
-#define SLOT
+#ifndef SLOT_H
+#define SLOT_H
 
 
 #include <vector>
