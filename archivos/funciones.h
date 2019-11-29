@@ -309,4 +309,4 @@ void entrega(Robot* bot, Slot* slt, Almacen* pAlm) {
 
 
 #endif
-#endif
+
