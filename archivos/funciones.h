@@ -1,7 +1,7 @@
 // prueba.h: archivo de inclusión para archivos de inclusión estándar del sistema,
 // o archivos de inclusión específicos de un proyecto.
-#ifndef funciones
-#define funciones
+#ifndef FUNCIONES_H
+#define FUNCIONES_H
 
 #pragma once
 
