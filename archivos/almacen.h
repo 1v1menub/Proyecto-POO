@@ -4,7 +4,7 @@
 #include "tipos.h"
 #include "casilla.h"
 #include "robot.h"
-#include "Slot.h"
+#include "slot.h"
 #include <vector>
 
 
