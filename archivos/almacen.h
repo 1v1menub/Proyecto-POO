@@ -22,7 +22,7 @@ public:
 	void add_slot(Slot* s);
 	cantidad get_rows();
 	std::vector<Robot*> get_robots();
-	std::vector<Slot*> Almacen::get_slots();
+	std::vector<Slot*> get_slots();
 	std::vector<vector<Casilla*>> get_pCasillas();
 	cantidad get_cols();
 };
